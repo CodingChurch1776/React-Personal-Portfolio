@@ -1,11 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Home } from './components';
+import { Home, Contact, Resume_Projects } from './components';
 import reportWebVitals from './reportWebVitals';
+
+import { HashRouter as Router, Switch, Route} from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Home title={'React Portfolio'}/>
+    <Router>
+      <Switch>
+
+        <Route exact path='/' component={Home}>
+          <Home title={'React Portfolio'}/>
+        </Route>
+
+        <Route path='/contact' component={Contact}/>
+
+        <Route path='/resume_projects' component={Resume_Projects}/>
+
+      </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
